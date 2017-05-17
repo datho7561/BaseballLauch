@@ -3,8 +3,9 @@ package baseballlaunching;
 import java.util.Scanner;
 
 /**
- *
- * @author D
+ * A program to calculate the speed needed to launch a baseball into a target
+ * 10 meters away.
+ * @author datho7561
  */
 public class BaseballLaunching {
 
@@ -21,16 +22,20 @@ public class BaseballLaunching {
      */
     public static void main(String[] args) {
         
+        // Get input from the console
         Scanner sc = new Scanner(System.in);
         
+        // Get the initial height and ball mass
         double initialH = sc.nextDouble();  // In metres above ground
         double mass = sc.nextDouble();      // In kilograms
         sc.nextLine();
         
+        // Initialize the distance and launch speed
         double resultingDistance = 0;
-        double launchSpeed = 15;
+        double launchSpeed = 0;
         
-        while(resultingDistance < 40) {
+        // While the distance from the launch is less that 40 m
+        while (resultingDistance < 40) {
             
             launchSpeed += VELOCITY_INCREASE;// Try a faster launch speed
             
@@ -40,6 +45,7 @@ public class BaseballLaunching {
             double vH = launchSpeed * Math.cos(angle);
             double vV = launchSpeed * Math.sin(angle);
             
+            // While the ball is above the ground
             while(h > 0) {
                 
                 // Calculate acceleration
